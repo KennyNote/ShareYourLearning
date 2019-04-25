@@ -1,4 +1,4 @@
-# **This is a awesome place to share your learning, come to join us!**
+# This is a awesome place to share your learning
 ## ⌨ ProgrammingLanguage 
 ### 👉 [Java](https://github.com/xuyangliu/LearningNote/blob/master/ProgrammingLanguage/Java/README.md)
 ### 👉 [Python](https://github.com/xuyangliu/LearningNote/blob/master/ProgrammingLanguage/Python/README.md)
