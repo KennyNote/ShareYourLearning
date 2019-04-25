@@ -9,6 +9,7 @@
 ### 👉 [Redis](https://github.com/xuyangliu/LearningNote/blob/master/Redis/README.md)
 ## 📬 MessageQueue 
 ### 👉 [RabbitMQ](https://github.com/xuyangliu/LearningNote/blob/master/MessageQueue/RabbitMQ/README.md)
+### 👉 [Kafka](https://github.com/xuyangliu/LearningNote/blob/master/MessageQueue/Kafka/README.md)
 ## 🔌 Support 
 ### 👉 [Maven](https://github.com/xuyangliu/LearningNote/blob/master/Maven/README.md)
 ### 👉 [ElasticSearch](https://github.com/xuyangliu/LearningNote/blob/master/ElasticSearch/README.md)
