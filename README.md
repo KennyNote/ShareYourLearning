@@ -17,5 +17,5 @@
 ### 👉 [Kubernetes](https://github.com/xuyangliu/LearningNote/blob/master/Kubernetes/README.md)
 ### 👉 [Docker](https://github.com/xuyangliu/LearningNote/blob/master/Docker/README.md)
 ## 🈲 Awesome Things
-
+### 👉 [Design Pattern](https://github.com/xuyangliu/LearningNote/blob/master/DesignPattern/README.md)
 
