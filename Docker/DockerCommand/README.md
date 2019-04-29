@@ -60,7 +60,7 @@ $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - **-v , --volume = []** : 给容器挂载存储卷，挂载到容器的某个目录；
 - **--volumes-from = []** : 给容器挂载其他容器上的卷，挂载到容器的某个目录；
 - **-w , --workdir = ""** :指定容器的工作目录；
-- 未完待续。。。。
+- 未完待续。。。
 ### 👉start/stop/restart
 ### 👉kill
 ### 👉rm
