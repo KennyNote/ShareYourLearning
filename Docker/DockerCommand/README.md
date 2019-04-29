@@ -42,12 +42,19 @@ $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - **-m , --memory** :设置容器使用内存最大值；
 - **--name** : 为容器指定一个名称；
 - **--net** : 指定容器的网络连接类型，支持 **bridge/host/none/container**四种类型；
+  - **bridge** : 使用docker daemon指定的网桥；
+  - **host** : 容器使用主机的网络；
+  - **container** : NAME_or_ID >// 使用其他容器的网路，共享IP和PORT等网络资源；
+  - **none** : 容器使用自己的网络（类似--net=bridge），但是不进行配置；
 - **-p , --publish** : 端口映射，格式为：**主机(宿主)端口:容器端口**；
 - **-P , --publish-all = false** : 端口随机映射；
 - **--privileged = false** : 指定容器是否为特权容器，特权容器拥有所有的capabilities；
-- **--restart = ""** : 指定容器停止后的重启策略，待详述；
-- **--rm = false** : 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)
-- **--sig-proxy = true** : 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理；
+- **--restart = ""** : 指定容器停止后的重启策略；
+  - **no** : 容器退出时不重启；
+  - **on-failure** : 容器故障退出（返回值非零）时重启；
+  - **always** : 容器退出时总是重启；
+- **--rm = false** : 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)；
+- **--sig-proxy = true** : 设置由代理接受并处理信号，但是**SIGCHLD、SIGSTOP和SIGKILL**不能被代理
 - **-t , --tty = false** : 为容器重新分配一个伪输入tty终端，通常与 -i 同时使用；
 - **-u , --user = ""** : 指定容器的用户；
 - **-v , --volume = []** : 给容器挂载存储卷，挂载到容器的某个目录；
