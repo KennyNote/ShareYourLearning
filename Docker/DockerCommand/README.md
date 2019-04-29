@@ -26,7 +26,7 @@ $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - **--dns** : 指定容器使用的DNS服务器，默认和宿主一致；
 - **--dns-opt** : 设置DNS选项
 - **--dns-option** : 设置DNS选项
-- **--dns-search** : 指定容器DNS搜索域名，写入到容器的/etc/resolv.conf文件，默认和宿主一致；
+- **--dns-search** : 指定容器DNS搜索域名，写入到容器的**/etc/resolv.conf**文件，默认和宿主一致；
 - **-e , --env** : 设置环境变量；
 - **--env-file = []** : 从指定文件读入环境变量；
 - **--entrypoint = "" **: 覆盖image的入口点；
@@ -38,16 +38,16 @@ $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - **--ip6** = [] :  设置固定IPv6
 - **-l , --label** : 设置容器元数据
 - **--link = []** : 指定容器间的关联，使用其他容器的IP、env等信息；
-- **--lxc-conf = []** : 指定容器的配置文件，只有在指定--exec-driver=lxc时使用；
+- **--lxc-conf = []** : 指定容器的配置文件，只有在指定**--exec-driver =  lxc**时使用；
 - **-m , --memory** :设置容器使用内存最大值；
 - **--name** : 为容器指定一个名称；
 - **--net** : 指定容器的网络连接类型，支持 **bridge/host/none/container**四种类型；
 - **-p , --publish** : 端口映射，格式为：**主机(宿主)端口:容器端口**；
 - **-P , --publish-all = false** : 端口随机映射；
-- **--privileged = false ** : 指定容器是否为特权容器，特权容器拥有所有的capabilities；
--  **--restart = ""** : 指定容器停止后的重启策略，待详述*
--  **--rm = false** : 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)*
--  **--sig-proxy = true** : 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理*
+- **--privileged = false** : 指定容器是否为特权容器，特权容器拥有所有的capabilities；
+- **--restart = ""** : 指定容器停止后的重启策略，待详述
+- **--rm = false** : 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)
+- **--sig-proxy = true** : 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理
 - **-t , --tty = false** : 为容器重新分配一个伪输入tty终端，通常与 -i 同时使用；
 - **-u , --user = ""** : 指定容器的用户
 - **-v , --volume = []** : 给容器挂载存储卷，挂载到容器的某个目录
