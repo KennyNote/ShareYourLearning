@@ -26,19 +26,19 @@ $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - **--dns** : 指定容器使用的DNS服务器，默认和宿主一致；
 - **--dns-opt** : 设置DNS选项
 - **--dns-option** : 设置DNS选项
-- **--dns-search** : 指定容器DNS搜索域名，写入到容器的**/etc/resolv.conf**文件，默认和宿主一致；
+- **--dns-search** : 指定容器DNS搜索域名，写入到容器的 **/etc/resolv.conf**文件，默认和宿主一致；
 - **-e , --env** : 设置环境变量；
 - **--env-file = []** : 从指定文件读入环境变量；
-- **--entrypoint = "" **: 覆盖image的入口点；
+- **--entrypoint = ""**: 覆盖image的入口点；
 - **--expose = []** : 开放一个端口或一组端口；
 - **-h , --hostname = ""** : 指定容器的主机名指定容器的hostname；
 - **--health-cmd** : 检测容器健康；
 - **-i , --interactive = false** : 以交互模式运行容器，通常与 -t 同时使用；
-- **--ip** = [] : 设置固定IPv4
-- **--ip6** = [] :  设置固定IPv6
+- **--ip = []** : 设置固定IPv4
+- **--ip6 = []** :  设置固定IPv6
 - **-l , --label** : 设置容器元数据
 - **--link = []** : 指定容器间的关联，使用其他容器的IP、env等信息；
-- **--lxc-conf = []** : 指定容器的配置文件，只有在指定**--exec-driver =  lxc**时使用；
+- **--lxc-conf = []** : 指定容器的配置文件，只有在指定 **--exec-driver = lxc**时使用；
 - **-m , --memory** :设置容器使用内存最大值；
 - **--name** : 为容器指定一个名称；
 - **--net** : 指定容器的网络连接类型，支持 **bridge/host/none/container**四种类型；
