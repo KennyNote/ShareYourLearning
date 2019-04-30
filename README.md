@@ -1,8 +1,8 @@
 # This is a awesome place to share your learning
 ## ⌨ ProgrammingLanguage 
-### 👉 [Java](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Java)
-### 👉 [Python](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Python)
-### 👉 [Go](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Go)
+### 👉 [Java](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Java) [ Java核心、Java进阶、Java相关框架 ]
+### 👉 [Python](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Python) [ Python核心、Python相关框架 ]
+### 👉 [Go](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Go) [ Go核心、Go相关框架 ]
 ## 💾 DataBase 
 ### 👉 [MySQL](https://github.com/xuyangliu/ShareYourLearning/blob/master/MySQL)
 ### 👉 [Redis](https://github.com/xuyangliu/ShareYourLearning/blob/master/Redis)
