@@ -23,6 +23,8 @@
 ### 👉 [Design Pattern](https://github.com/xuyangliu/ShareYourLearning/blob/master/DesignPattern) [ 常用设计模式 ]⏸
 ### 👉 [RPC](https://github.com/xuyangliu/ShareYourLearning/blob/master/RPC) [ RPC概念、注意问题 ]⏸
 ### 👉 [Algorithm](https://github.com/xuyangliu/ShareYourLearning/blob/master/Algorithm) [ 常见算法 ]▶
+### 👉 [Network](https://github.com/xuyangliu/ShareYourLearning/blob/master/Network) [ 网络 ]▶
+### 👉 [Operating System](https://github.com/xuyangliu/ShareYourLearning/blob/master/OperatingSystem) [ 操作系统 ]▶
 ## 未完待续。。。
 ## 👥 contributor
 ### 🧐 Liu Xuyang :Java developer, work in Shanghai now. 
