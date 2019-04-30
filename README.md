@@ -30,5 +30,5 @@
 ### 🧐 Liu Xuyang :Java developer, work in Shanghai now. 
 ### 🤩 Li Haowu : Java developer, work in Beijing now.
 ### 🤔 Li Wengang : Java developer, work in Fuzhou now.
-### 🤔 Li Zhenyu : Investor, work in Fuzhou now.
+### 🤔 Li Zhenyu : Investor, work in Shenzhen later.
 
