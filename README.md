@@ -18,6 +18,7 @@
 ### 👉 [ElasticSearch](https://github.com/xuyangliu/ShareYourLearning/blob/master/ElasticSearch)
 ### 👉 [Jenkins](https://github.com/xuyangliu/ShareYourLearning/blob/master/Jenkins)
 ### 👉 [Git](https://github.com/xuyangliu/ShareYourLearning/blob/master/Git)
+### 👉 [Nexus](https://github.com/xuyangliu/ShareYourLearning/blob/master/Nexus)
 ### 👉 [Kubernetes](https://github.com/xuyangliu/ShareYourLearning/blob/master/Kubernetes)
 ### 👉 [Docker](https://github.com/xuyangliu/ShareYourLearning/blob/master/Docker)
 ## 🈲 Awesome Things
