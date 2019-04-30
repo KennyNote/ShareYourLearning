@@ -6,7 +6,7 @@
 ### 👉 [Go](https://github.com/xuyangliu/ShareYourLearning/blob/master/ProgrammingLanguage/Go) [ Go核心、Go相关框架 ] ⏸
 ## 💾 DataBase 
 ### 👉 [MySQL](https://github.com/xuyangliu/ShareYourLearning/blob/master/MySQL) ▶
-### 👉 [Redis](https://github.com/xuyangliu/ShareYourLearning/blob/master/Redis) ⏸
+### 👉 [Redis](https://github.com/xuyangliu/ShareYourLearning/blob/master/Redis) [Redis核心、Redis进阶、Redis部署、Redis迁移]⏸
 ## 📬 MessageQueue 
 ### 👉 [RabbitMQ](https://github.com/xuyangliu/ShareYourLearning/blob/master/MessageQueue/RabbitMQ) ▶
 ### 👉 [Kafka](https://github.com/xuyangliu/ShareYourLearning/blob/master/MessageQueue/Kafka) ▶
