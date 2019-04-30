@@ -24,5 +24,6 @@
 ## 🈲 Awesome Things
 ### 👉 [Design Pattern](https://github.com/xuyangliu/ShareYourLearning/blob/master/DesignPattern)
 ### 👉 [RPC](https://github.com/xuyangliu/ShareYourLearning/blob/master/RPC)
+### 👉 [Algorithm](https://github.com/xuyangliu/ShareYourLearning/blob/master/Algorithm)
 ## 未完待续。。。
 
