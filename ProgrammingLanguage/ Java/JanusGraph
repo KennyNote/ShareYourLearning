@@ -1,0 +1,199 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import utils.AddSchema;
+
+public class JgAddNetwork {
+	
+	public static void main(String[] args) {
+		System.out.println("读取数据中...............");
+		String jsonString = getDataFromTxt("C:\\Users\\Administrator\\Desktop\\EdgeOutData1.txt");
+		System.out.println("读取数据完毕,开始转json");
+		JSONArray   jasonObject = JSONArray.fromObject(jsonString);
+		List<Map<String, String>> list = jasonObject;
+		System.out.println("开始添加图数据");
+		addNetwork(jasonObject);
+	}
+	
+	public static String getDataFromTxt(String fileUrl) {
+	
+		//StringBuffer resString = new StringBuffer();
+		String res = "";
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(fileUrl));
+			String s = null;
+			while((s = br .readLine())!=null) {
+				//resString.append(System.lineSeparator()+s);
+				res = res+s;
+			}
+			br.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
+	public static void addNetwork(List<Map<String, String>> list) {
+		AddSchema addSchema = new AddSchema();
+		//添加属性
+		System.out.println("开始创建属性");
+		List<String> propertiesList = new ArrayList<>();
+		propertiesList.add("INSTANCE_ID");
+		propertiesList.add("CLASS_ID");
+		addSchema.createProperties(propertiesList);
+		System.out.println("创建属性完成");
+		System.out.println("开始创建顶点");
+		//添加顶点
+		List<String> vertexList = new ArrayList<>();
+			for(int j = 0;j<list.size();j++) {
+			vertexList.add(7+list.get(j).get("INSTANCE_ID"));
+		}
+		addSchema.createVertexLabels(vertexList);
+		System.out.println("创建顶点完成");
+		System.out.println("开始创建边");
+		//添加边
+		List<String> edgeList = new ArrayList<>();
+		list.forEach(e ->{
+			edgeList.add(e.get("NAME")+"@"+e.get("CLASS_ID"));
+		});
+		addSchema.createEdgeLabels(edgeList);
+		System.out.println("创建边完成，准备提交事务");
+		addSchema.overCommit();
+		System.out.println("事务提交完成，准备创建关系");
+		//添加关系
+		addSchema.createElements(list);
+		System.out.println("关系创建完成");
+	}
+
+}
+package utils;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.janusgraph.core.schema.JanusGraphManagement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import OpenTest.JanusgraphOpen;
+
+public class AddSchema {
+	private static final Logger LOGGER = LoggerFactory.getLogger(AddSchema.class);
+	protected JanusgraphOpen open = null;
+	protected GraphTraversalSource g = null;
+	protected JanusGraphManagement management = null;
+	
+	public AddSchema(){
+		this.open = new JanusgraphOpen();
+		this.g = open.getTraversal();
+		this.management = open.getGraph().openManagement();
+	}
+	/**
+	 * 创建属性
+	 * @param propertiesList
+	 */
+	public void createProperties(List<String> propertiesList) {
+		try {
+			propertiesList.forEach(e ->{
+				if(!management.containsPropertyKey(e)) {
+				management.makePropertyKey(e).dataType(String.class).make();
+				}else {
+					LOGGER.info("属性（"+e+"）已存在");
+				}
+			});
+		} catch (Exception e2) {
+			// TODO: handle exception
+			LOGGER.error("创建属性错误："+e2);
+			management.rollback();
+		}
+		
+	}
+	/**
+	 * 创建顶点标签
+	 * @param vertexList
+	 */
+	public void createVertexLabels(List<String> vertexList) {
+		try {
+			vertexList.forEach(e ->{
+				if(!management.containsVertexLabel(e)) {
+				management.makeVertexLabel(e).make();
+				}else {
+					LOGGER.info("顶点（"+e+"）已存在");
+				}
+			});
+		} catch (Exception e2) {
+			// TODO: handle exception
+			LOGGER.error("创建顶点标签错误："+e2);
+			management.rollback();
+		}
+		
+	}
+	/**
+	 * 创建边标签
+	 * @param edgeList
+	 */
+	public void createEdgeLabels(List<String> edgeList) {
+		try {
+			edgeList.forEach(e ->{
+				if(!management.containsEdgeLabel(e)) {
+				management.makeEdgeLabel(e).make();
+				}else {
+					LOGGER.info("边（"+e+"）已存在");
+				}
+			});
+		} catch (Exception e2) {
+			// TODO: handle exception
+			LOGGER.error("创建边标签错误："+e2);
+			management.rollback();
+		}
+		
+	}
+	//添加顶点属性，添加顶点关系
+	public void createElements(List<Map<String, String>> elementList) {
+		// TODO Auto-generated method stub
+		for(int i = 0;i<elementList.size();i++) {
+			Vertex vertex1 = g.addV(7+elementList.get(i).get("INSTANCE_ID")).property("CLASS_ID",elementList.get(i).get("CLASS_ID")).next();
+			Vertex vertex2 = g.addV(7+"DESTINATION_INSTANCE_ID").next();
+			g.V(vertex1).as("a").V(vertex2).addE(elementList.get(i).get("NAME")+"@7"+elementList.get(i).get("CLASS_ID")).from("a").next();
+			}
+		g.tx().commit();
+		open.colseJanusgraph();
+	}
+	/**
+	 * 创建索引
+	 * @param indexName
+	 * @param keyName
+	 */
+	public void buildIndex(String indexName,String keyName) {
+		try {
+			if(!management.containsGraphIndex(indexName)&&management.containsPropertyKey(keyName)) {
+			management.buildIndex(indexName, Vertex.class).addKey(management.getPropertyKey(keyName)).buildCompositeIndex();
+			}else {
+				LOGGER.info("索引（"+indexName+"）已存在或未找到（"+keyName+"）属性");	
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			LOGGER.error("创建索引出错："+e);
+			management.rollback();
+		}
+		
+	}
+	public void overCommit() {
+		management.commit();
+	}
+}
