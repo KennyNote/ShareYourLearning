@@ -1,9 +1,17 @@
 [Spring boot启动原理](https://www.cnblogs.com/shamo89/p/8184960.html)
+
 [Hash Map源码](https://www.cnblogs.com/leesf456/p/5242233.html)
+
 [学习Java8](https://segmentfault.com/a/1190000012211339)
+
 [大数据学习路线](https://www.imooc.com/article/26678)
+
 [三个月学习大数据](https://blog.csdn.net/gitchat/article/details/78341484)
+
 [从零搭建Prometheus监控报警系统](https://www.cnblogs.com/chenqionghe/p/10494868.html)
+
 [Influxdb 介绍与使用](https://segmentfault.com/a/1190000015721780)
+
 [ELK原理与介绍](https://www.cnblogs.com/aresxin/p/8035137.html)
+
 [kafka入门](https://www.cnblogs.com/likehua/p/3999538.html)
