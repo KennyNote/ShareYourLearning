@@ -1,6 +1,6 @@
 # JVM
 
-![jvm](https://github.com/xuyangliu/ShareYourLearning/tree/master/ProgrammingLanguage/Java/images/jvm.jpg)
+![jvm](https://raw.githubusercontent.com/xuyangliu/ShareYourLearning/tree/master/ProgrammingLanguage/Java/images/jvm.jpg)
 
 ## 1. 类加载器子系统（Class Loader Subsystem）
 > Java的动态类加载功能是由类加载器子系统处理。当它在运行时（不是编译时）首次引用一个类时，它加载、链接并初始化该类文件。
@@ -21,7 +21,7 @@
 
 ​		 JVM逐行执行java程序。每当JVM首先遇到一个特定的类时，JVM将检查这个.class文件是否已经加载，如果已经加载，JVM会从方法区加载这个类，否则JVM将请求类加载器子系统装入.class文件，然后类加载器子系统将该请求发送给应用程序类装入器。
 
-![class_loader](https://github.com/xuyangliu/ShareYourLearning/tree/master/ProgrammingLanguage/Java/images/class_loader.png)
+![class_loader](https://raw.githubusercontent.com/xuyangliu/ShareYourLearning/tree/master/ProgrammingLanguage/Java/images/class_loader.png)
 
 **自底向上检查类是否被加载过**
 
@@ -54,7 +54,7 @@
 
 ​		正式分配内存并初始化**零值**给所有的**静态变量**。内存分配不包括实例变量，实例变量会在对象实例化时随着对象一块分配在 Java 堆中。
 
-![zero_value](https://github.com/xuyangliu/ShareYourLearning/tree/master/ProgrammingLanguage/Java/images/zero_value.png)
+![zero_value](https://raw.githubusercontent.com/xuyangliu/ShareYourLearning/tree/master/ProgrammingLanguage/Java/images/zero_value.png)
 
 ​		**内存分配方式**有 **“指针碰撞”** 和 **“空闲列表”** 两种，**选择那种分配方式由 Java 堆是否规整决定，而 Java 堆是否规整又由所采用的垃圾收集器是否带有压缩整理功能决定**。
 
